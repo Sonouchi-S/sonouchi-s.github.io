@@ -1,0 +1,118 @@
+/*
+カラー
+グリーン　#5BBB96　アクセント
+ライトブルー　#498BC1　header , main
+ブルー　#47458B　ベースカラー
+
+ライトグリーン　#EEF6E1　ヘッダー用
+ライトレッド　#F9DFDA　ホバー用
+ブラック　#484A42　フォント用
+シャドウ　#DCDFD8　影用
+*/
+/*フォント*/
+.kaisei-decol-regular {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .kaisei-decol-medium {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .kaisei-decol-bold {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  /*フォントここまで*/
+
+body {
+    padding-top:40px;
+    font-family:serif;
+    background-color: #fefefe;
+    display: flex;
+    justify-content: space-around;
+    color: #484A42;
+}
+header{
+    font-family:"Kaisei Decol",serif;
+    background-color: #EEF6E1;
+    width: 25%;
+}
+header ul{
+    width: 90%;
+    height: auto;
+    padding-left:0px;
+    position:relative;
+    margin:auto;
+}
+header ul li {
+    width: 90%;
+    height:30px;
+    margin:auto;
+    list-style:none;
+}
+li {
+    list-style:none;
+}
+header ul li p{
+    position:relative;
+    text-align: center;
+}
+header ul li:hover {
+background-color: #F9DFDA;
+color:#ffffff;            
+
+transition-property: all;
+transition-duration: 150ms;
+transition-timing-function: ease-in;
+}
+
+main{
+    background-color: #EEF6E1;
+    width: 65%;
+    padding-bottom: 40px;
+}
+main div.flexbox{
+    display: flex;
+    justify-content: space-around;
+}
+.offDisplay{
+    display:none;
+}
+.ondisplay{
+    border-radius: 12em;
+    box-shadow:3px 3px 5px 5px#555555;
+    width: 90%;
+    height: auto;
+}
+    
+h1{
+    font-family:"Kaisei Decol",serif;
+}
+.textCenter{
+    text-align: center;
+}
+div.images{
+    width: 30%;
+}
+#profilePage img{
+    max-width: 200px;
+}
+
+#profilePage .smallImg {
+    max-width: 50px;
+}
+
+div.changeWidth{
+    width: 300px;
+    position:relative;
+    margin:auto;
+}
+.changeWidth img:hover{
+    background-color: #F9DFDA;
+}
+
