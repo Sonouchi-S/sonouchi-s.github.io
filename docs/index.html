@@ -26,6 +26,9 @@
             <li onclick="headerClick('link');">
                 <p>Link</p>
             </li>
+            <li onclick="headerClick('uranai');">
+                <p>おみくじ</p>
+            </li>
         </ul>
     </header>
     <main>
@@ -79,10 +82,23 @@
             <div class="flexbox  linkIcons">
                 <a href="https://kanzaki-meisa.fanbox.cc/"><img src="img/fanbox.svg" alt="pixivfanbox"></a>
                 <a  href="https://gi-pt.com/main/wishlist/fan-view/3a11f394-abe5-b3d9-08da-0d80b5ac7a6b"><img src="img/present.svg" alt="プレゼント"></a>
-                <a  href="https://kanzaki-meisa.booth.pm/"><img src="img/booth.svg" alt="booth"></a>
-                
+                <a  href="https://kanzaki-meisa.booth.pm/"><img src="img/booth.svg" alt="booth"></a>  
             </div>
+        </div>
 
+        <div class="offDisplay" id="uranai">
+            <h1 class="textCenter">神崎神宮</h1>
+            <div id="keidai">
+                <div class="flexbox">
+                    <p id="setName">あなた</p><p>の運勢</p>
+                </div>
+                <p class="" id="about"></p>
+                <h2 id="result"></h2>
+            </div>
+            <div class="flexbox">
+                <input type="text" id="getName" value="">
+                <button onclick="startUranai();">占う</button>
+            </div>
         </div>
 
     </main>
