@@ -138,3 +138,45 @@ div.linkIcons{
     top:0px;
 }
 
+.twitter-timeline{
+    width:500px;
+    /* data-width="500"*/
+}
+
+@media screen and (max-width:700px){
+    body{
+        display: block;
+    }
+    header{
+        width: 90%;
+        height:40px;
+        margin:auto;
+    }
+    header ul{
+        display: flex;
+        height:40px;
+    }
+    header ul li{
+        height: 100%;
+    }
+    header ul li p{
+        margin-top:10px;
+    }
+    main{
+        width: 90%;
+        margin:auto;
+    }
+    .twitter-timeline{
+        width:90%;
+        /* data-width="500"*/
+    }
+    #profilePage .flexbox{
+        display:block;
+    }
+    #profilePage .flexbox div{
+        text-align: center;
+    }
+    #profilePage .flexbox div ul{
+        padding-left: 0%;
+    }
+}
