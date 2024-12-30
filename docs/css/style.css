@@ -99,6 +99,22 @@ h1{
 div.images{
     width: 30%;
 }
+#twitter{
+    position:relative;
+}
+#twitter div{
+    position:relative;
+    margin:auto ;
+}
+
+#topPage p{
+    text-align: center;
+}
+
+#profilePage .flexbox{
+    justify-content: center;
+}
+
 #profilePage img{
     max-width: 200px;
 }
@@ -107,12 +123,18 @@ div.images{
     max-width: 50px;
 }
 
-div.changeWidth{
+div.linkIcons{
     width: 300px;
+    height: 150px;
     position:relative;
     margin:auto;
 }
-.changeWidth img:hover{
-    background-color: #F9DFDA;
+.linkIcons img{
+    position:relative;
+    top: 3px; 
+}
+
+.linkIcons img:hover{
+    top:0px;
 }
 

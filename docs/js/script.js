@@ -3,6 +3,7 @@ function headerClick(area){
     offDisplayArea.forEach(items=>{items.className="offDisplay";});
     let targetArea=document.getElementById(area);
     targetArea.className="onDisplay";
+    targetArea.animate({opacity:[0,1]},500);
 }
 
 let smallImg=document.querySelectorAll('img.smallImg');
