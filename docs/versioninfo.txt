@@ -17,3 +17,9 @@ Modify JavaScript.
 2025/ 1/ 2 ver.1.2.0 release.
 Add function for Javascript.
 
+2025/ 1/ 3 ver.1.2.1 release.
+Modify css
+   #uranai p.abouts,#uranai h2,#uranai h2.result,#topPage img.meisarGimmick
+Modify JavaScript
+   function meisarGimmick,function startUranai
+

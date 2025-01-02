@@ -52,31 +52,35 @@ function startUranai(){
     thisUser.uranai(thisUser.values);
     document.getElementById("setName").innerHTML=thisUser.name;
 
-    //結果の表示とアニメーション
-    let resultText=document.getElementById("result");
-    //resultText.innerHTML=thisUser.result;
-    resultText.animate([{opacity:0},{opacity:1}],{duration:500,delay:300});
-    window.setTimeout(
-        ()=>{
-            resultText.innerHTML=thisUser.result;
-        },400
-    );
+
 
     //本文の表示とアニメーション
     let aboutText=document.getElementById("about");
     //about.className='abouts';
-    aboutText.animate([{opacity:0,width:0},{opacity:1,width:"256px"}],{duration:500,delay:600});
+    aboutText.animate([{opacity:0,width:0,fontSize:0},{opacity:1,width:"256px",fontSize:"16px"}]
+        ,{duration:500,delay:600});
     window.setTimeout(
         ()=>{
             aboutText.innerHTML=thisUser.about;
-            about.className='abouts';
+            aboutText.className='abouts';
         },700
     );
+
+        //結果の表示とアニメーション
+        let resultText=document.getElementById("result");
+        resultText.animate([{opacity:0},{opacity:1}],{duration:500,delay:600});
+        window.setTimeout(
+            ()=>{
+                resultText.innerHTML=thisUser.result;
+                result.className='result';
+            },700
+        );
 }
 
 function meisarGimmick(){
-    const insertPosition=document.getElementById('twitter');
+    const insertPosition=document.getElementById('beforeTwitter');
     const newElement=document.createElement('img');
     newElement.src='uranai/meisar.png';
+    newElement.className="meisarGimmick";
     insertPosition.before(newElement);
 }

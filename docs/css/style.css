@@ -111,6 +111,10 @@ div.images{
     text-align: center;
 }
 
+#topPage img.meisarGimmick{
+    width: 100%;
+}
+
 #profilePage .flexbox{
     justify-content: center;
 }
@@ -157,6 +161,10 @@ div.linkIcons{
     margin:0;
 }
 #uranai h2{
+    display: none;
+}
+#uranai h2.result{
+    display: block;
     text-shadow: 0px 2px 3px #ffffff;
     font-size: 30px;
     text-align: center;
