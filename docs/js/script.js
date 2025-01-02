@@ -72,7 +72,7 @@ function startUranai(){
         window.setTimeout(
             ()=>{
                 resultText.innerHTML=thisUser.result;
-                result.className='result';
+                resultText.className='result';
             },700
         );
 }

@@ -23,3 +23,6 @@ Modify css
 Modify JavaScript
    function meisarGimmick,function startUranai
 
+2025/ 1/ 3 ver.1.2.2 release.
+Modify JavaScript
+   function meisarGimmick
