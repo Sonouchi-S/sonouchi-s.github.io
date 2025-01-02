@@ -43,6 +43,12 @@ function startUranai(){
     const thisUser = new Mikuji(
         document.getElementById('getName').value
     );
+
+    if(thisUser.name=='メイサー'){
+        meisarGimmick();
+        thisUser.values=10;
+    }
+
     thisUser.uranai(thisUser.values);
     document.getElementById("setName").innerHTML=thisUser.name;
 
@@ -66,4 +72,11 @@ function startUranai(){
             about.className='abouts';
         },700
     );
+}
+
+function meisarGimmick(){
+    const insertPosition=document.getElementById('twitter');
+    const newElement=document.createElement('img');
+    newElement.src='uranai/meisar.png';
+    insertPosition.before(newElement);
 }
