@@ -26,3 +26,6 @@ Modify JavaScript
 2025/ 1/ 3 ver.1.2.2 release.
 Modify JavaScript
    function meisarGimmick
+
+2025/ 2/ 9 ver.1.3.2 release.
+Make HTML Valentine.
