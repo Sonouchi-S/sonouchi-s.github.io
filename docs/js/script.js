@@ -82,15 +82,15 @@ function meisarGimmick(){
     //リンク先の追加
     const insertPosition=document.getElementById('beforeTwitter');
     let aTag=document.createElement('a');
-    aTag.setAttribute('id','valentine')
-    aTag.setAttribute('href','./valentine/valentine.html');
+    aTag.setAttribute('id','whiteday')
+    aTag.setAttribute('href','./whiteday/whiteday.html');
     insertPosition.before(aTag);
 
     //画像の追加
     // const imgElement=document.createElement('img');
     // imgElement.src='uranai/meisar.png';
     // imgElement.className="meisarGimmick";
-    aTag=document.getElementById('valentine');
+    aTag=document.getElementById('whiteday');
     const content=`<img src='uranai/meisar.png' class='meisarGimmick'>`;
     aTag.insertAdjacentHTML('afterbegin',content);
     
