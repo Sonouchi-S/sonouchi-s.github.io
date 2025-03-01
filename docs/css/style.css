@@ -83,12 +83,12 @@ main div.flexbox{
 .offDisplay{
     display:none;
 }
-.ondisplay{
+/* .ondisplay{
     border-radius: 12em;
     box-shadow:3px 3px 5px 5px#555555;
     width: 90%;
     height: auto;
-}
+} */
     
 h1{
     font-family:"Kaisei Decol",serif;
@@ -196,6 +196,67 @@ div.linkIcons{
 
 /*uranaiエリアここまで*/
 
+/*Whitedayページここから*/
+.flexbox{
+    display: flex;
+    justify-content: center;
+}
+.center{
+    text-align: center;
+}
+#CharaSelect ul{
+    padding-left: 0;
+}
+#CharaSelect ul li p:hover {
+    background-color: #F9DFDA;
+    color:#ffffff;   
+}
+#selectArea ul{
+    padding-left: 0;
+    text-align: center;
+}
+#selectArea ul li{
+    margin: auto;
+    min-width: 60%;
+    max-width: 80%;
+    margin-bottom:2px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    background-color: #F9DFDA;
+}
+.ondisplay{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+#Quest{
+    text-align: center;
+}
+#ImgArea{
+    width: 500px;
+    height: 281.25px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    margin-left: auto;
+    margin-right: auto;
+}
+#InputText{
+    width: 50%;
+    height: 90%;
+    padding: 20px;
+    font-size: 18px;
+    text-align: justify;
+}
+#submitBtn{
+    width:100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F9DFDA;
+}
+/*Whitedayページここまで*/
+
 @media screen and (max-width:700px){
     body{
         display: block;
@@ -232,4 +293,17 @@ div.linkIcons{
     #profilePage .flexbox div ul{
         padding-left: 0%;
     }
+
+    /*Game用*/
+    #ImgArea{
+        width: 100%;
+        height: 200px;
+    }
+    #InputText{
+        width: 50%;
+        height: 70%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
 }
