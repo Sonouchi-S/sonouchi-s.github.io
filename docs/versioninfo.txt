@@ -18,13 +18,13 @@ Modify JavaScript.
 Add function for Javascript.
 
 2025/ 1/ 3 ver.1.2.1 release.
-Modify css.
+Modify css
    #uranai p.abouts,#uranai h2,#uranai h2.result,#topPage img.meisarGimmick
-Modify JavaScript.
+Modify JavaScript
    function meisarGimmick,function startUranai
 
 2025/ 1/ 3 ver.1.2.2 release.
-Modify JavaScript.
+Modify JavaScript
    function meisarGimmick
 
 2025/ 2/ 9 ver.1.3.2 release.
