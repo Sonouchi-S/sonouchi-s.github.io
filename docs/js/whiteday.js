@@ -148,6 +148,9 @@ function nextStage() {//次へを押下した時実行
         getId('GameClear').className='ondisplay';
         let url=imgSelect();//画像の選択
         getId('ImgArea').style.backgroundImage = `url(${url})`;//画像URLの挿入
+        getId('createPng').addEventListener('click',()=>{//画像ダウンロードボタンの生成
+            outputPng();
+        });
         getId('submitBtn').addEventListener('click',()=>{//テキスト入力ボタンの設定
             let messages=getId('getText').value;//テキストの取得
             let messenger=getId('messenger').value;//名前の取得
@@ -155,11 +158,7 @@ function nextStage() {//次へを押下した時実行
             messages=messages.replace(/\n/g, '<br>');
             getId('InputText').innerHTML = messages;//テキストの出力
             messenger=escapeHTML(messenger);//エスケープ処理
-            getId('nameArea').innerHTML=messenger;//名前の出力
-            getId('createPng').addEventListener('click',()=>{//画像ダウンロードボタンの生成
-                outputPng();
-            }
-            );
+            getId('nameArea').innerHTML=messenger;//名前の出力            
         });
         function escapeHTML(str) {//エスケープ処理
             return str.replace(/&/g, '&amp;')
