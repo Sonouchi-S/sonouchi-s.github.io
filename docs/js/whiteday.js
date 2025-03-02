@@ -1,6 +1,6 @@
-////////////////
-// ゲーム定義 //
-///////////////
+//////////////////////
+// ゲームキャラ定義 //
+///////////////////
 class CharaSet {
     //コンストラクタ
     //特典の初期設定、イメージ画像の設定、質問文・解答の設定。    
@@ -34,26 +34,61 @@ class CharaSet {
 }
 
 const people1 = [
-    ["Name1", "../img/1.png","../img/2.png"]
+    ["Name1"
+        , "../img/1.png"
+        ,"../img/2.png"
+    ]
     , { Q: "Q1"
         , Sel1: "Sel1"
         , Sel2: "Sel2"
         , Ans: "Sel1"
         , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." }
+        , FalseText: "BadEnd..." 
+    }
     , { Q: "Q2"
         , Sel1: "Sel1"
         , Sel2: "Sel2"
         , Ans: "Sel2"
         , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." }
+        , FalseText: "BadEnd..." 
+    }
     , { Q: "Q3"
         , Sel1: "Sel1"
         , Sel2: "Sel2"
         , Ans: "Sel2"
         , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." }
+        , FalseText: "BadEnd..."
+    }
 ];
+
+const people2 = [
+    ["Name1"
+        , "../img/1.png"
+        ,"../img/2.png"
+    ]
+    , { Q: "Q1"
+        , Sel1: "Sel1"
+        , Sel2: "Sel2"
+        , Ans: "Sel1"
+        , TrueText: "HappyEnd!"
+        , FalseText: "BadEnd..." 
+    }
+    , { Q: "Q2"
+        , Sel1: "Sel1"
+        , Sel2: "Sel2"
+        , Ans: "Sel2"
+        , TrueText: "HappyEnd!"
+        , FalseText: "BadEnd..." 
+    }
+    , { Q: "Q3"
+        , Sel1: "Sel1"
+        , Sel2: "Sel2"
+        , Ans: "Sel2"
+        , TrueText: "HappyEnd!"
+        , FalseText: "BadEnd..." 
+    }
+];
+
 //id要素取得Function
 function getId(Id) { return document.getElementById(Id); }
 
@@ -83,8 +118,6 @@ function setQuest() {//質問の表示
     dispS1.innerHTML = Chara.Sel1;
     dispS2.innerHTML = Chara.Sel2;
 }
-
-
 
 function selectAnswer() {//回答選択時の実行
     if (Chara.Ans == this.id) {//正解を選択した場合。
@@ -139,8 +172,7 @@ function nextStage() {//次へを押下した時実行
     }
 }
 
-
-function imgSelect(){
+function imgSelect(){//メッセージカードの選択
     if(Chara.name=='Name1'){//選択したキャラ名がName1の場合
         return '../img/Clear3.png';
     }else if(Chara.name=='Name2'){//選択したキャラがName2の場合
