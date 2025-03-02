@@ -150,21 +150,25 @@ function nextStage() {//次へを押下した時実行
         getId('ImgArea').style.backgroundImage = `url(${url})`;//画像URLの挿入
         getId('submitBtn').addEventListener('click',()=>{//テキスト入力ボタンの設定
             let messages=getId('getText').value;//テキストの取得
-            let messenger=getId('messenger').value;
-            messages=escapeHTML(messages);
+            let messenger=getId('messenger').value;//名前の取得
+            messages=escapeHTML(messages);//エスケープ処理
             messages=messages.replace(/\n/g, '<br>');
-            getId('InputText').innerHTML = messages;//テキストの入力
-            messenger=escapeHTML(messenger);
-            getId('nameArea').innerHTML=messenger;
+            getId('InputText').innerHTML = messages;//テキストの出力
+            messenger=escapeHTML(messenger);//エスケープ処理
+            getId('nameArea').innerHTML=messenger;//名前の出力
+            getId('createPng').addEventListener('click',()=>{//画像ダウンロードボタンの生成
+                outputPng();
+            }
+            );
         });
-
-        function escapeHTML(str) {
+        function escapeHTML(str) {//エスケープ処理
             return str.replace(/&/g, '&amp;')
                       .replace(/</g, '&lt;')
                       .replace(/>/g, '&gt;')
                       .replace(/"/g, '&quot;')
                       .replace(/'/g, '&#039;');
           }
+        
 
     }else {//3以下である時
         Chara.questSet(inc);//クラスに次の課題をセット
@@ -185,4 +189,15 @@ function imgSelect(){//メッセージカードの選択
     }
 }
 
-
+async function outputPng(){//pngとしてダウンロード
+    const msgCard=getId('ImgArea');//要素の取得
+    const canvas=await html2canvas(msgCard);//取得した要素の画像化
+    console.log(canvas);
+    const imgData=canvas.toDataURL("image/png");
+    const link=document.createElement("a");//a要素の付与
+    link.href=imgData;//画像をa要素にリンク
+    link.download="MessageCard.png";//ダウンロード時の名称の付与
+    document.body.appendChild(link);//ドキュメントにa要素の付与
+    link.click();//a要素のクリック（ダウンロード実行）
+    document.body.removeChild(link);//a要素の削除
+}

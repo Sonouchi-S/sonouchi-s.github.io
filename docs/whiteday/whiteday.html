@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Zen+Old+Mincho&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
     <script src="../js/whiteday.js" defer></script>
     <title>WhiteDay</title>
 </head>
@@ -46,11 +47,14 @@
                 <div class="center">
                     <input type="text" id="messenger" value="あなたの名前"><br>
                 <textarea maxlength="400" name="message" rows="10" cols="40" placeholder="メッセージを入力して「出力」ボタンを押下。" id="getText" value=""></textarea>
-                <p id="submitBtn">出力</p>
+                <p id="submitBtn">表示</p>
             </div>
                 <div id="ImgArea" class="flexbox">
                     <p id="InputText"></p>
                     <p id="nameArea"></p>
+                </div>
+                <div class="center">
+                    <p id="createPng">メッセージカード出力（png）</p>
                 </div>
             </div>
         </div>

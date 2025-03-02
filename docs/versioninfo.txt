@@ -31,4 +31,7 @@ Modify JavaScript
 Make HTML Valentine.
 
 2025/3/1 ver.1.4.1 release.
-Cleate WhiteDay EventData.
+Create WhiteDay EventData.
+
+2025/3/2 var.1.4.2 release.
+Add function Card Download.
