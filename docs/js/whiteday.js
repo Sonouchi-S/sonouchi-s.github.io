@@ -150,9 +150,12 @@ function nextStage() {//次へを押下した時実行
         getId('ImgArea').style.backgroundImage = `url(${url})`;//画像URLの挿入
         getId('submitBtn').addEventListener('click',()=>{//テキスト入力ボタンの設定
             let messages=getId('getText').value;//テキストの取得
+            let messenger=getId('messenger').value;
             messages=escapeHTML(messages);
             messages=messages.replace(/\n/g, '<br>');
             getId('InputText').innerHTML = messages;//テキストの入力
+            messenger=escapeHTML(messenger);
+            getId('nameArea').innerHTML=messenger;
         });
 
         function escapeHTML(str) {

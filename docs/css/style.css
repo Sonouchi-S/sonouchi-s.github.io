@@ -255,6 +255,11 @@ div.linkIcons{
     margin-right: auto;
     background-color: #F9DFDA;
 }
+
+#nameArea{
+font-size: 12px;
+}
+
 /*Whitedayページここまで*/
 
 @media screen and (max-width:700px){
