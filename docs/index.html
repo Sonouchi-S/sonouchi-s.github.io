@@ -10,7 +10,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Zen+Old+Mincho&display=swap"
         rel="stylesheet">
-
     <script src="js/script.js" defer></script>
     <title>Meisa Kanzaki Unofficial Fanclub</title>
 </head>
@@ -103,6 +102,13 @@
         </div>
 
     </main>
+    <script>
+        const getCookie=document.cookie.split(";").find((row)=>row.startsWith("Meisar="))?.split("=")[1];
+        console.log(getCookie);
+      if(getCookie=='meisar'){
+        headerClick('uranai');
+      }
+        </script>
 
 </body>
 
