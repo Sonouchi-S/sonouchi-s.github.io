@@ -93,6 +93,22 @@ function meisarGimmick(){
     aTag=document.getElementById('whiteday');
     const content=`<img src='uranai/meisar.png' class='meisarGimmick'>`;
     aTag.insertAdjacentHTML('afterbegin',content);
-    
-
 }
+
+
+// const cookies = document.cookie;
+// console.log(document.cookie);
+// const array = cookies.split(';');
+// array.forEach(function(value) {
+//     const content = value.split('=');
+//     if(content[1]=='meisar'){
+//         headerClick('uranai');
+//         document.cookie = "Meisar=meisar; max-age=0";
+//     }
+// })
+
+const getCookie=document.cookie.split(";").find((row)=>row.startsWith("Meisar="))?.split("=")[1];
+  console.log(getCookie);
+  if(getCookie=='meisar'){
+    headerClick('uranai');
+  }

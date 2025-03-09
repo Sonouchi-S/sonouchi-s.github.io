@@ -257,11 +257,23 @@ function nextStage() {//次へを押下した時実行
                       .replace(/'/g, '&#039;');
           }
     }else {//3以下である時
+        if(Chara.name=='NightAgo' && inc==3){
+            Chara.questSet(inc);//クラスに次の課題をセット
+            setQuest();//質問の表示実行
+            dispS1.removeEventListener('click', nextStage);//nextStageのアクションを削除
+            dispS1.addEventListener('click', selectAnswer);//selectAnswerのアクションを追加
+            dispS2.addEventListener('click',()=>{
+                document.cookie='Meisar=meisar; Max-age=360';
+                //window.open('../index.html','_brank');
+                window.location.href = '../index.html';
+            });           
+        }else{
         Chara.questSet(inc);//クラスに次の課題をセット
         setQuest();//質問の表示実行
         dispS1.removeEventListener('click', nextStage);//nextStageのアクションを削除
         dispS1.addEventListener('click', selectAnswer);//selectAnswerのアクションを追加
         dispS2.addEventListener('click', selectAnswer);//同上
+        }
     }
 }
 
