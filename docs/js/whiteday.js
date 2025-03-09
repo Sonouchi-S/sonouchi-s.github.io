@@ -257,7 +257,7 @@ function nextStage() {//次へを押下した時実行
                       .replace(/'/g, '&#039;');
           }
     }else {//3以下である時
-        if(Chara.name=='NightAgo' && inc==3){
+        if(Chara.name=='NightAgo' && inc==3){//特殊ギミック
             Chara.questSet(inc);//クラスに次の課題をセット
             setQuest();//質問の表示実行
             dispS1.removeEventListener('click', nextStage);//nextStageのアクションを削除
