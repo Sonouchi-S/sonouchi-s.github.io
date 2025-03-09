@@ -97,3 +97,8 @@ function meisarGimmick(){
     //cookieの追加
     document.cookie='Meisar=meisar; Max-age=3600';
 }
+
+const getCookie=document.cookie.split(";").find((row)=>row.startsWith("Meisar="))?.split("=")[1];
+if(getCookie=='meisar'){
+  headerClick('uranai');
+}
