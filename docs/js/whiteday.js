@@ -274,6 +274,7 @@ function imgSelect(){//メッセージカードの選択
         {
             getId('charaInsert').insertAdjacentHTML('beforeend',people2[0][3]);
             getId('charaInsert').insertAdjacentHTML('beforeend',people3[0][3]);
+            getId('charaInsert').insertAdjacentHTML('beforeend',people4[0][3]);
         }
         return '../img/Clear3.png';
     }else{//それ以外の場合
