@@ -35,3 +35,8 @@ Create WhiteDay EventData.
 
 2025/3/2 var.1.4.2 release.
 Add function Card Download.
+
+2025/3/9 var.1.4.3 release.
+Add Contents data.
+   js/whiteday.js/people1~4.
+   img/Clear4~5,w1~w2
