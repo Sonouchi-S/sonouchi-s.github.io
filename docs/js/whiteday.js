@@ -262,10 +262,18 @@ function nextStage() {//次へを押下した時実行
             setQuest();//質問の表示実行
             dispS1.removeEventListener('click', nextStage);//nextStageのアクションを削除
             dispS1.addEventListener('click', selectAnswer);//selectAnswerのアクションを追加
-            dispS2.addEventListener('click',()=>{
-                document.cookie='Meisar=meisar; Max-age=360';
-                //window.open('../index.html','_brank');
-                window.location.href = '../index.html';
+            dispS2.addEventListener('click',()=>{//間違い押下時の基本挙動に、サイト頭へ飛ばす挙動追加
+                displayImg.src =Chara.ImgcodeFalse;
+                dispQ.innerHTML=Chara.FalseText;
+                dispS1.innerHTML = "もう1回!";//選択ボタンに次文字を上書き
+                dispS2.innerHTML = "";//選択ボタンの文字列削除
+                dispS1.removeEventListener('click', selectAnswer);//selectAnswerのアクションを削除
+                dispS2.removeEventListener('click', selectAnswer);//同上
+                dispS1.addEventListener('click', //サイト頭へ飛ばす。
+                    ()=>{
+                        window.location.href = '../index.html';
+                    }
+                );
             });           
         }else{
         Chara.questSet(inc);//クラスに次の課題をセット
