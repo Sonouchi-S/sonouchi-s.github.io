@@ -99,6 +99,6 @@ function meisarGimmick(){
 }
 
 const getCookie=document.cookie.split(";").find((row)=>row.startsWith("Meisar="))?.split("=")[1];
-if(getCookie=='meisar'){
+if(getCookie[1]=='meisar'){
   headerClick('uranai');
 }
