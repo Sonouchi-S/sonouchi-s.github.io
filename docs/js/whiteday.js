@@ -33,61 +33,148 @@ class CharaSet {
     }
 }
 
-const people1 = [
-    ["Name1"
-        , "../img/1.png"
-        ,"../img/2.png"
+const people=[
+    [""
+        ,""
+        ,""
     ]
-    , { Q: "Q1"
-        , Sel1: "Sel1"
-        , Sel2: "Sel2"
+    ,{Q:""
+        , Sel1:""
+        , Sel2:""
+        , Ans:""
+        , TrueText:""
+        , FalseText:""
+    }
+    ,{Q:""
+        , Sel1:""
+        , Sel2:""
+        , Ans:""
+        , TrueText:""
+        , FalseText:""
+    }
+    ,{Q:""
+        , Sel1:""
+        , Sel2:""
+        , Ans:""
+        , TrueText:""
+        , FalseText:""
+    }
+]
+
+const people1 = [
+    ["ちゅーとりある！"
+        , "../img/1.png"
+        ,"../img/false1.png"
+    ]
+    , { Q: "こんにちは！今回は「ホワイトデーメッセージカードをGETして、メッセージを作ろう」という企画です！<br>メッセージカードは全部で5種類！ファン有志でつくったから、好きなカードを手に入れて、メッセージを入れてみてね！<br>早速ですが、①をクリックしてね！"
+        , Sel1: "①こっちをクリック！"
+        , Sel2: "②こっちはノータッチ！"
         , Ans: "Sel1"
-        , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." 
+        , TrueText: "ありがとう！<br>このように、質問に答えて正解と思った方の選択肢を選ぶ、を3問繰り返すよ！<br>3問正解でカードゲット！じゃあ、練習で次の問題いこう！"
+        , FalseText: "あー！違う違う！①を選んでね！<br>間違えてもやり直し出来るから大丈夫だよ！<br>でも、押すなって言われると押したくなるよね！" 
     }
-    , { Q: "Q2"
-        , Sel1: "Sel1"
-        , Sel2: "Sel2"
-        , Ans: "Sel2"
-        , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." 
+    , { Q: "じゃあ練習問題！大丈夫、間違えても同じ質問を答えることが出来るからね！<br>神崎メイサの誕生日はいつでしょーか？"
+        , Sel1: "6月23日"
+        , Sel2: "3月24日"
+        , Ans: "Sel1"
+        , TrueText: "正解!"
+        , FalseText: "3月24日はデビュー日だよ！" 
     }
-    , { Q: "Q3"
-        , Sel1: "Sel1"
-        , Sel2: "Sel2"
-        , Ans: "Sel2"
-        , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..."
+    , { Q: "これでチュートリアルおしまい！自由にメッセージカードを記入して、推しやリスナーに向けて自由にメッセージカードをツイートしてね！"
+        , Sel1: "了解！"
+        , Sel2: "お、おう...."
+        , Ans: "Sel1"
+        , TrueText: "メッセージの送り主の名前と、メッセージを記入して[表示]ボタンを押すと、カードに反映されるよ！<br>[カード出力（png）]を押したらカードが画像保存されるよ！<br>メッセージは長すぎるとカードからはみ出すから気を付けてね！"
+        , FalseText: "！？！？！？！？！？！？"
     }
 ];
 
 const people2 = [
-    ["Name1"
-        , "../img/1.png"
-        ,"../img/2.png"
+    ["あるメイサー"
+        , "../img/w1.png"
+        ,"../img/w2.png"
+        ,`<li><p onclick="gameMake(people2)">あるメイサー</p></li>`
     ]
-    , { Q: "Q1"
-        , Sel1: "Sel1"
-        , Sel2: "Sel2"
+    , { Q: "Q1:Vtuber神崎メイサを知ってる？"
+        , Sel1: "当然！"
+        , Sel2: "どちら様？"
         , Ans: "Sel1"
-        , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." 
+        , TrueText: "あなたもメイサー(仮)にならないか？"
+        , FalseText: "YouTubeで『神崎メイサ』と調べてみよう。素敵なVtuberが見つかるよ！" 
     }
-    , { Q: "Q2"
-        , Sel1: "Sel1"
-        , Sel2: "Sel2"
-        , Ans: "Sel2"
-        , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." 
+    , { Q: "Q2:神崎メイサの魅力は何だと思いますか？"
+        , Sel1: "歌が素敵で、トークが面白く、コラボやゲーム配信等、どんな枠でも楽しめるとこ！"
+        , Sel2: "立ち絵が綺麗"
+        , Ans: "Sel1"
+        , TrueText: "あなたはすでにメイサー(仮)です！"
+        , FalseText: "先ずはチャンネル登録をして気になったアーカイブを見て、神崎メイサの魅力を発見しましょう。" 
     }
-    , { Q: "Q3"
-        , Sel1: "Sel1"
-        , Sel2: "Sel2"
-        , Ans: "Sel2"
-        , TrueText: "HappyEnd!"
-        , FalseText: "BadEnd..." 
+    , { Q: "Q3:神崎メイサをYouTube以外にも楽しんでる？"
+        , Sel1: "もちろんいろいろ登録しています。シチュボ最高！"
+        , Sel2: "YouTube以外にも何かあるの？"
+        , Ans: "Sel1"
+        , TrueText: "あなたは素敵しいメイサー(仮)の一人ですね！これからも、神崎メイサとメイサー(仮)と一緒に楽しんで行きましょう！"
+        , FalseText: "Twitter、TikTok、FANBOXもフォローしていろいろなコンテンツで神崎メイサを楽しみましょう！" 
     }
 ];
+
+const people3 = [
+    ["NightAgo"
+        , "../img/1.png"
+        ,"../img/false1.png"
+        ,`<li><p onclick="gameMake(people3)">NightAgo</p></li>`
+    ]
+    , { Q: "Q1:今日って何の日か覚えてる？"
+        , Sel1: "ホワイトデー？？"
+        , Sel2: "円周率の日だよね？"
+        , Ans: "Sel1"
+        , TrueText: "正解！バレンタインデーのお返しを渡そうと思って"
+        , FalseText: "そうそう、3.14159265ってね。帰ります。" 
+    }
+    , { Q: "Q2:お返し、何だと思う？"
+        , Sel1: "そもそもあげてないけど…"
+        , Sel2: "チョコレートでしょ！"
+        , Ans: "Sel2"
+        , TrueText: "今年はチョコレートじゃなくて形に残るものにしたんだ"
+        , FalseText: "記憶喪失かな？？記憶作り直してきてね" 
+    }
+    , { Q: "Q3:形に残るものでプレゼントになるものなら分かるかな？"
+        , Sel1: "お手紙とかかな？"
+        , Sel2: "おまけ付きたんぽぽかな？"
+        , Ans: "Sel1"
+        , TrueText: "正解！それじゃあメッセージを書いてね！"
+        , FalseText: "綿毛の根元におみくじついてるやつね、何それ…"
+    }
+];
+
+const people4=[
+    ["管理人"
+        ,"../img/1.png"
+        ,"../img/false1.png"
+        ,`<li><p onclick="gameMake(people4)">管理人</p></li>`
+    ]
+    ,{Q:"こちらはランダムでカードを取得出来ます。準備はOK？"
+        , Sel1:"OK!"
+        , Sel2:"NO!"
+        , Ans:"Sel1"
+        , TrueText:"オッケー！じゃあ問題をだしちゃおっかな！"
+        , FalseText:"あら、じゃあ待とうかな・・・？"
+    }
+    ,{Q:"Q1:神崎メイサさんのlit.linkに無い項目はどれ？"
+        , Sel1:"血液型"
+        , Sel2:"年齢"
+        , Ans:"Sel1"
+        , TrueText:"血液型は表記してないね！"
+        , FalseText:"「成人済み」って表記がある！"
+    }
+    ,{Q:"Q2:神崎メイサさんがアカウントを登録していないSNSはどれ？"
+        , Sel1:"TikTok"
+        , Sel2:"Mixi2"
+        , Ans:"Sel2"
+        , TrueText:"これ意外なのよね！"
+        , FalseText:"ひょっとして管理人が知らないだけで登録済みなのかな・・・？"
+    }
+]
 
 //id要素取得Function
 function getId(Id) { return document.getElementById(Id); }
@@ -106,6 +193,8 @@ const clearText="ゲームクリア！！メッセージカードを作れるよ
 
 function gameMake(Ch) {//キャラ選択ボタンで発生するゲーム開始時の処理
     Chara = new CharaSet(Ch);
+    inc=1;
+    getId('GameClear').className='offDisplay';
     setQuest();
     dispS1.addEventListener('click', selectAnswer);//selectAnswerのアクションを追加
     dispS2.addEventListener('click', selectAnswer);//同上
@@ -132,7 +221,7 @@ function selectAnswer() {//回答選択時の実行
     } else {//不正解を選択した場合
         displayImg.src =Chara.ImgcodeFalse;
         dispQ.innerHTML=Chara.FalseText;
-        dispS1.innerHTML = "One more challenge!";//選択ボタンに次文字を上書き
+        dispS1.innerHTML = "もう1回!";//選択ボタンに次文字を上書き
         dispS2.innerHTML = "";//選択ボタンの文字列削除
         dispS1.removeEventListener('click', selectAnswer);//selectAnswerのアクションを削除
         dispS2.removeEventListener('click', selectAnswer);//同上
@@ -167,8 +256,6 @@ function nextStage() {//次へを押下した時実行
                       .replace(/"/g, '&quot;')
                       .replace(/'/g, '&#039;');
           }
-        
-
     }else {//3以下である時
         Chara.questSet(inc);//クラスに次の課題をセット
         setQuest();//質問の表示実行
@@ -179,12 +266,25 @@ function nextStage() {//次へを押下した時実行
 }
 
 function imgSelect(){//メッセージカードの選択
-    if(Chara.name=='Name1'){//選択したキャラ名がName1の場合
+    if(Chara.name=='あるメイサー'){//ロムエッグさん選出キャラの場合
+        return '../img/Clear4.JPG';
+    }else if(Chara.name=='NightAgo'){//アゴり手さん選出キャラの場合
+        return '../img/Clear5.jpg';
+    }else if(Chara.name=='ちゅーとりある！'){//ちゅーとりあるの場合
+        {
+            getId('charaInsert').insertAdjacentHTML('beforeend',people2[0][3]);
+            getId('charaInsert').insertAdjacentHTML('beforeend',people3[0][3]);
+        }
         return '../img/Clear3.png';
-    }else if(Chara.name=='Name2'){//選択したキャラがName2の場合
-        return '../img/Clear1.png';
     }else{//それ以外の場合
-        return '../img/Clear2.png';
+        let number = Math.round(Math.random()*10);
+        if(number<=4){
+            return '../img/Clear1.png';
+        }else if (number<=7){
+            return '../img/Clear5.jpg';
+        }else{
+            return '../img/Clear2.png';
+        }
     }
 }
 

@@ -30,9 +30,8 @@
 
             </p>
             <div id="CharaSelect">
-                <ul class="flexbox">
-                    <li><p onclick="gameMake(people1)";>Chara1</p></li>
-                    <li><p onclick="gameMake(people2)">Chara2</p></li>
+                <ul class="flexbox" id="charaInsert">
+                    <li><p onclick="gameMake(people1)">ちゅーとりある！</p></li>
                 </ul>
             </div>
             <div class="center"><img id="gameImg" src="" alt=""></div>
@@ -46,19 +45,18 @@
             <div id="GameClear" class="offDisplay">
                 <div class="center">
                     <input type="text" id="messenger" value="あなたの名前"><br>
-                <textarea maxlength="400" name="message" rows="10" cols="40" placeholder="メッセージを入力して「出力」ボタンを押下。" id="getText" value=""></textarea>
-                <p id="submitBtn">表示</p>
-            </div>
+                    <textarea maxlength="400" name="message" rows="10" cols="40" placeholder="メッセージを入力して「出力」ボタンを押下。" id="getText" value=""></textarea>
+                    <p id="submitBtn">表示</p>
+                </div>
                 <div id="ImgArea" class="flexbox">
                     <p id="InputText"></p>
                     <p id="nameArea"></p>
                 </div>
                 <div class="center">
-                    <p id="createPng">メッセージカード出力（png）</p>
+                    <p id="createPng">カード<br>出力<br>（png）</p>
                 </div>
             </div>
         </div>
-        <div ></div>
     </main>
 </body>
 </html>

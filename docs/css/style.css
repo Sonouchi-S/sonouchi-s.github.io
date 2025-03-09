@@ -199,13 +199,18 @@ div.linkIcons{
 /*Whitedayページここから*/
 .flexbox{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 .center{
     text-align: center;
 }
 #CharaSelect ul{
     padding-left: 0;
+}
+#CharaSelect ul li p{
+    background-color: #fefefe;
+    color:#000000;   
 }
 #CharaSelect ul li p:hover {
     background-color: #F9DFDA;
