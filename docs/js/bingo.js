@@ -36,7 +36,7 @@ for(let j=mathCount;j>=0;j--){
 });
 });
 
-//ビンゴ
+//ビンゴカードのマス空け
 function outputInt(id){
     getId(id).className=getId(id).className=='cardsCell'?'clickedCell':'cardsCell';
 }
@@ -123,7 +123,7 @@ async function outputPng(){//pngとしてダウンロード
     const imgData=canvas.toDataURL("image/png");
     const link=document.createElement("a");//a要素の付与
     link.href=imgData;//画像をa要素にリンク
-    link.download="bingoCard.png";//ダウンロード時の名称の付与
+    link.download="BingoCard.png";//ダウンロード時の名称の付与
     document.body.appendChild(link);//ドキュメントにa要素の付与
     link.click();//a要素のクリック（ダウンロード実行）
     document.body.removeChild(link);//a要素の削除

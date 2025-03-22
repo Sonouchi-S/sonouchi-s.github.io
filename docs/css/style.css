@@ -306,7 +306,11 @@ font-size: 12px;
     }
     .clickedCell{
         text-align: center;
-        background:url(../img/3.png) no-repeat center center/contain;
+        background:url(../img/stamp.png) no-repeat center center/contain;
+    }
+
+    #oBng{
+        background:url(../img/card.png) no-repeat center center/contain;        
     }
 /* Bingoここまで */
 
