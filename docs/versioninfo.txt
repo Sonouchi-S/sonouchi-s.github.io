@@ -40,3 +40,8 @@ Add function Card Download.
 Add Contents data.
    js/whiteday.js/people1~4.
    img/Clear4~5,w1~w2
+
+2025/3/22 var.1.5.1 release.
+Create Bingo EventData.
+    js/bingo.js
+    bingo/bingo.html
