@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Zen+Old+Mincho&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/bingo.js" defer></script>
+    <title>Bingo!</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li> <a href="../index.html"><p>戻る</p></a> </li>
+            <li onclick="headerClick('cleateBng')"><p>カード作成</p></li>
+            <li onclick="headerClick('outPutBng')"><p>ビンゴ</p></li>
+        </ul>
+    </header>
+    <main>
+        <div id="cleateBng" class="onDisplay">
+            <h2 class="textCenter">
+                ビンゴをつくろう
+            </h2>
+            <div id="cBng" class="board"></div>
+            <div><br></div>
+            <div class="flexbox">
+                <button id="dataExport">データの保存<br>(Jsonファイルで保存する)</button>
+            </div>
+            <div><p id="resultMsg"></p></div>
+        </div>
+        <div id="outPutBng" class="offDisplay">
+            <h2 class="textCenter">ビンゴカードの出力</h2>
+            <div class="textCenter">
+                <form name="myform" action="">
+                    <input name="myfile" id="upfile" type="file">
+                </form>
+            </div>
+            
+            <div id="oBng" class="board"></div>
+            <div class="textCenter">
+                <br>
+                <button onclick="outputPng();">ビンゴカードの出力(png)</button>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>

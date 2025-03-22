@@ -1,3 +1,5 @@
+function getId(Id) { return document.getElementById(Id); }
+
 function headerClick(area){
     let offDisplayArea=document.querySelectorAll('div.onDisplay');
     offDisplayArea.forEach(items=>{items.className="offDisplay";});

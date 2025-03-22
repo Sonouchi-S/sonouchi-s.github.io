@@ -270,9 +270,45 @@ font-size: 12px;
     margin-right: auto;
     background-color: #F9DFDA;
 }
-
-
 /*Whitedayページここまで*/
+
+    /* Bingoここから */
+    #cleateBng{
+        text-align: center;
+    }
+    .board{
+        width: 100%;
+        margin: auto;
+    }
+    .cells{
+        width: 300PX;
+        height: 60px;
+        display: flex;
+        margin: auto;
+    }
+
+    .cell{
+        width: 60px;
+        height: 60px;
+        border: solid 2px #000000;
+    }
+    .cell input{
+        border:none;
+        background-color: none;
+        width: 54px;
+        height:54px;
+        text-align: center;
+        font-size: 18px;
+        
+    }
+    .cardsCell{
+        text-align: center;
+    }
+    .clickedCell{
+        text-align: center;
+        background:url(../img/3.png) no-repeat center center/contain;
+    }
+/* Bingoここまで */
 
 @media screen and (max-width:700px){
     body{
@@ -322,5 +358,4 @@ font-size: 12px;
         padding: 10px;
         font-size: 16px;
     }
-
 }
