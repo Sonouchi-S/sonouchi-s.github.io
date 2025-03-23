@@ -66,7 +66,7 @@ let jsonData = getId('dataExport');//保存ボタンのid要素取得
 jsonData.addEventListener('click', () => {//保存ボタンクリック時の処理規定
     dataMethod['createJson']();
     let check = dataMethod['intCheck']();
-    if (check.bl != true) {
+    if (check.bl == false) {
         let msg = getId('resultMsg');
         msg.innerHTML = check.message;
     } else {
@@ -119,17 +119,20 @@ const dataMethod = {
         };
         const checkSet = new Set();//データをSetに入力。重複した値があると片方しか残らないため、データの数が25未満になる。
         for (const value in json) {
+            if(json[value]==""||null){//Jsonファイル作成時に生じる空文字データをカウントしないようにbreakして弾く
+                break;
+            }
             checkSet.add(json[value]);
         }
-        if (checkSet.size != 25) {//データ数の確認
+        if (checkSet.size < 25) {//データ数の確認
             result.bl=false;
             result.message = '入力した数字が足りないか、重複があります';
-        } else {
+        } else if (checkSet.size==25){
             result.bl = true;
         }
         return result;
     },
-    "createJson": () => {//
+    "createJson": () => {//jsonオブジェクトに結果を入力
         for (i = 0; i <= 4; i++) {
             for (j = 0; j <= 4; j++) {
                 let getInt = getId(`cArea${i}${j}`);
