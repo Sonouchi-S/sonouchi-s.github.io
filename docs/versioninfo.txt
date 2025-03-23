@@ -45,3 +45,9 @@ Add Contents data.
 Create Bingo EventData.
     js/bingo.js
     bingo/bingo.html
+
+2025/3/22 var.1.5.2 release.
+Update layout.
+   Bingo.html
+Add Infomation.
+   js/script.js,uranai.js,whiteday.js,bingo.js

@@ -312,6 +312,10 @@ font-size: 12px;
     #oBng{
         background:url(../img/card.png) no-repeat center center/contain;        
     }
+
+    .textLeft{
+        text-align: left;
+    }
 /* Bingoここまで */
 
 @media screen and (max-width:700px){

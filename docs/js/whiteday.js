@@ -1,6 +1,23 @@
-//////////////////////
+/////////////////////////////
+//*ホワイトデー企画のメッセージカード作成・カードをpngで保存*
+//作成者:Shu,X:https://x.com/shu1483072
+//作成日:2025/03/09,更新日2025/03/23
+//使用言語:JavaScript
+//依存関係:必要なライブラリ:html2canvas.min.js,ブラウザ:Chrome134.0.6998.118（Official Build）
+//実行方法:DOCS/whiteday/whiteday.html
+//ライセンス:
+// html2canvas v1.5.1
+// https://html2canvas.hertzen.com/
+// Copyright (c) 2023 Niklas von Hertzen
+// Released under the MIT License
+//注意事項:ライブラリのバージョン変更に伴い画像保存が機能しなくなる場合があるので、バージョン管理をしてください。
+//prefix:jshead
+/////////////////////////////
+
+
+/////////////////////
 // ゲームキャラ定義 //
-///////////////////
+////////////////////
 class CharaSet {
     //コンストラクタ
     //特典の初期設定、イメージ画像の設定、質問文・解答の設定。    
