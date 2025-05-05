@@ -18,8 +18,8 @@
     <header>
         <ul>
             <li> <a href="../index.html"><p>戻る</p></a> </li>
-            <li onclick="headerClick('cleateBng')"><p>カード作成</p></li>
-            <li onclick="headerClick('outPutBng')"><p>ビンゴ</p></li>
+            <li id="cleateBngDiv"><p>カード作成</p></li>
+            <li id="outPutBngDiv"><p>ビンゴ</p></li>
         </ul>
     </header>
     <main>
@@ -53,7 +53,7 @@
             <div id="oBng" class="board"></div>
             <div class="textCenter">
                 <br>
-                <button onclick="outputPng();">ビンゴカードの出力(png)</button>
+                <button id="createPng">ビンゴカードの出力(png)</button>
             </div>          
         </div>
     </main>

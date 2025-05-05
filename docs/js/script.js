@@ -1,17 +1,24 @@
 /////////////////////////////
 //*メイン画面の動作、全画面の共通操作*
 //作成者:Shu,X:https://x.com/shu1483072
-//作成日:2024/12/30,更新日2025/03/23
+//作成日:2024/12/30,更新日2025/05/05
 //使用言語:JavaScript
-//依存関係:ブラウザ:Chrome134.0.6998.118（Official Build）
+//依存関係:必要なライブラリ:html2canvas.min.js,ブラウザ:Chrome134.0.6998.118（Official Build）
 //実行方法:/DOCS/index.html
 //ライセンス:
+// html2canvas v1.5.1
+// https://html2canvas.hertzen.com/
+// Copyright (c) 2023 Niklas von Hertzen
+// Released under the MIT License
 //注意事項:全HTMLページの他スクリプトより先に表記実行する必要あり。
+//ライブラリのバージョン変更に伴い画像保存が機能しなくなる場合があるので、バージョン管理をしてください。
 //prefix:jshead
 //
 //・id要素の取得
 //・ヘッダーのリスト押下時の表示処理
-//・特別サイト移動処理                  
+//・特別サイト移動処理     
+//2025/05/04　ハウルギミック・cookieの削除、png出力処理追加
+//2025/05/05　トップページロード時のアニメーション追加             
 /////////////////////////////
 
 //id要素の取得
@@ -44,26 +51,76 @@ smallImg.forEach(smallImg=>{
     });
 });
 
-//ハウル表示（バレンタインサイト移動仕様）
-function meisarGimmick(){
-    //リンク先の追加
-    const insertPosition=getId('beforeTwitter');
-    let aTag=document.createElement('a');
-    aTag.setAttribute('id','whiteday')
-    aTag.setAttribute('href','./whiteday/whiteday.html');
-    insertPosition.before(aTag);
-
-    //画像の追加
-    aTag=getId('whiteday');
-    const content=`<img src='uranai/meisar.png' class='meisarGimmick'>`;
-    aTag.insertAdjacentHTML('afterbegin',content);
-
-    //cookieの追加
-    document.cookie='Meisar=meisar; Max-age=1800';
+//png出力処理
+async function outputPng(id,name) {//pngとしてダウンロード
+    const msgCard = getId(id);//要素の取得
+    const canvas = await html2canvas(msgCard);//取得した要素の画像化
+    console.log(canvas);
+    const imgData = canvas.toDataURL("image/png");
+    const link = document.createElement("a");//a要素の付与
+    link.href = imgData;//画像をa要素にリンク
+    link.download = name;//ダウンロード時の名称の付与
+    document.body.appendChild(link);//ドキュメントにa要素の付与
+    link.click();//a要素のクリック（ダウンロード実行）
+    document.body.removeChild(link);//a要素の削除
 }
 
-//cookieの設定を確認し、占い画面を自動表示する
-const getCookie=document.cookie.split(";").find((row)=>row.startsWith("Meisar="))?.split("=")[1];
-if(getCookie=='meisar'){
-  headerClick('uranai');
+
+//トップページアニメーション
+class fadeCntl{
+     countInt=1;
+     setInt(){
+        this.countInt++;
+        if(this.countInt==1){return 1;}
+        else if(this.countInt==2){return 2;}
+        else if(this.countInt==3){return 3;}
+        else{        
+            this.countInt=1;
+            return 1;
+        }
+     }
+}
+const fc=new fadeCntl();
+window.setInterval(()=>{
+        getId('fadeArea').className='imgFade'+fc.setInt();
+},4000);
+
+getId('loadAnmArea').addEventListener('load',loadAction());
+function loadAction(){
+    const kf1=[
+        { opacity: 0, transform: 'translateY(80px)'}, // 初期状態（透明 & 下にある）
+        { opacity: 1, transform: 'translateY(30px)'}, // フェードイン & 上へ移動
+        { opacity: 0, transform: 'translateY(-20px)'} // フェードアウト & 上へ移動      
+    ];
+    const kf2=[
+        { opacity: 0, transform: 'translateY(-20px)'}, // 初期状態（透明 & 上にある）
+        { opacity: 1, transform: 'translateY(30px)'}, // フェードイン & 下へ移動
+        { opacity: 0, transform: 'translateY(80px)'} // フェードアウト & 下へ移動      
+    ];
+    const opt={
+        duration: 2000, // 1秒間
+        easing: 'ease-in-out',
+        iterations: 1, // 1回実行      
+    };
+    const img = document.createElement('img');
+    img.id='Anm';
+    img.style.position = 'absolute';
+    img.style.left = '-150px'; 
+    img.src = '../img/topPre1.png'; 
+    getId('loadAnmArea').insertAdjacentElement("afterbegin",img);
+    getId('Anm').animate(kf1,opt);
+    
+    setTimeout(()=>{
+    img.src='../img/topPre2.png';
+    img.style.left = '0px'; //右へ移動
+
+    getId('loadAnmArea').nextElementSibling.remove();
+    getId('loadAnmArea').insertAdjacentElement("afterbegin",img);
+    getId('Anm').animate(kf2,opt);
+    },2000);
+    
+    setTimeout(()=>{
+        getId('loadAnmArea').remove();
+        headerClick('topPage');
+    },4000);
 }

@@ -1,16 +1,17 @@
 /////////////////////////////
 //*おみくじ機能を規定、実行する*
 //作成者:Shu,X:https://x.com/shu1483072
-//作成日:2025/01/01,更新日2025/03/23
+//作成日:2025/01/01,最終更新日2025/05/04
 //使用言語:JavaScript
 //依存関係:ブラウザ:Chrome134.0.6998.118（Official Build）
-//実行方法:/DOCS/index.html
+//実行方法:/DOCS/uranai/KanzakiJingu.html
 //ライセンス:
 //注意事項:
 //prefix:jshead
 //
 //・おみくじクラスの設定
 //・占い実行処理
+//2025/05/04　メイサー入力時のギミック削除
 /////////////////////////////
 
 //おみくじクラスの設定
@@ -36,6 +37,9 @@ class Mikuji{
     }
 }
 
+//ボタン作成
+getId('uranaiKekka').addEventListener('click',()=>{startUranai()});
+
 //「占う」ボタン押下で占い実行
 function startUranai(){
     //おみくじクラスのインスタンス化
@@ -43,14 +47,8 @@ function startUranai(){
         getId('getName').value
     );
 
-    if(thisUser.name=='メイサー'){//入力名がメイサーの時の処理
-        meisarGimmick();
-        thisUser.values=10;
-    }
-
     thisUser.uranai(thisUser.values);//クラスの占い実行、結果の設定完了
     getId("setName").innerHTML=thisUser.name;//入力した名前を画面に表示
-
 
 
     //本文の表示とアニメーション

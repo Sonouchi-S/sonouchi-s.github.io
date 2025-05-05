@@ -1,17 +1,14 @@
 /////////////////////////////
 //*ホワイトデー企画のメッセージカード作成・カードをpngで保存*
 //作成者:Shu,X:https://x.com/shu1483072
-//作成日:2025/03/09,更新日2025/03/23
+//作成日:2025/03/09,更新日2025/05/04
 //使用言語:JavaScript
-//依存関係:必要なライブラリ:html2canvas.min.js,ブラウザ:Chrome134.0.6998.118（Official Build）
+//依存関係:ブラウザ:Chrome134.0.6998.118（Official Build）
 //実行方法:DOCS/whiteday/whiteday.html
 //ライセンス:
-// html2canvas v1.5.1
-// https://html2canvas.hertzen.com/
-// Copyright (c) 2023 Niklas von Hertzen
-// Released under the MIT License
-//注意事項:ライブラリのバージョン変更に伴い画像保存が機能しなくなる場合があるので、バージョン管理をしてください。
+//注意事項:
 //prefix:jshead
+//2025/05/04　画像リンクの修正、png出力処理の削除、コード修正
 /////////////////////////////
 
 
@@ -76,12 +73,12 @@ const people=[
         , TrueText:""
         , FalseText:""
     }
-]
+]//サンプル
 
 const people1 = [
     ["ちゅーとりある！"
-        , "../img/1.png"
-        ,"../img/false1.png"
+        , "../whiteday/true.png"
+        ,"../whiteday/false.png"
     ]
     , { Q: "こんにちは！今回は「ホワイトデーメッセージカードをGETして、メッセージを作ろう」という企画です！<br>メッセージカードは全部で5種類！ファン有志でつくったから、好きなカードを手に入れて、メッセージを入れてみてね！<br>早速ですが、①をクリックしてね！"
         , Sel1: "①こっちをクリック！"
@@ -108,8 +105,8 @@ const people1 = [
 
 const people2 = [
     ["あるメイサー"
-        , "../img/w1.png"
-        ,"../img/w2.png"
+        , "../whiteday/w1.png"
+        ,"../whiteday/w2.png"
         ,`<li><p onclick="gameMake(people2)">あるメイサー</p></li>`
     ]
     , { Q: "Q1:Vtuber神崎メイサを知ってる？"
@@ -137,8 +134,8 @@ const people2 = [
 
 const people3 = [
     ["NightAgo"
-        , "../img/1.png"
-        ,"../img/false1.png"
+        , "../whiteday/true.png"
+        ,"../whiteday/false.png"
         ,`<li><p onclick="gameMake(people3)">NightAgo</p></li>`
     ]
     , { Q: "Q1:今日って何の日か覚えてる？"
@@ -166,8 +163,8 @@ const people3 = [
 
 const people4=[
     ["管理人"
-        ,"../img/1.png"
-        ,"../img/false1.png"
+        ,"../whiteday/true.png"
+        ,"../whiteday/false.png"
         ,`<li><p onclick="gameMake(people4)">管理人</p></li>`
     ]
     ,{Q:"こちらはランダムでカードを取得出来ます。準備はOK？"
@@ -193,9 +190,6 @@ const people4=[
     }
 ]
 
-//id要素取得Function
-function getId(Id) { return document.getElementById(Id); }
-
 
 /////////////////
 //ゲーム実行定義//
@@ -208,6 +202,40 @@ let dispS1 = getId('Sel1');
 let dispS2 = getId('Sel2');
 const clearText="ゲームクリア！！メッセージカードを作れるよ！";
 
+//画面にチュートリアルボタン配置
+getId('tutorialList').addEventListener('click',()=>{gameMake(people1)});
+
+function setQuest() {//質問の表示
+    displayImg.src = Chara.Imgcode;
+    dispQ.innerHTML = Chara.Ques;
+    dispS1.innerHTML = Chara.Sel1;
+    dispS2.innerHTML = Chara.Sel2;
+}
+
+function imgSelect(){//メッセージカードの選択
+    if(Chara.name=='あるメイサー'){//ロムエッグさん選出キャラの場合
+        return '../whiteday/Clear4.JPG';
+    }else if(Chara.name=='NightAgo'){//アゴり手さん選出キャラの場合
+        return '../whiteday/Clear5.jpg';
+    }else if(Chara.name=='ちゅーとりある！'){//ちゅーとりあるの場合
+        {
+            getId('charaInsert').insertAdjacentHTML('beforeend',people2[0][3]);
+            getId('charaInsert').insertAdjacentHTML('beforeend',people3[0][3]);
+            getId('charaInsert').insertAdjacentHTML('beforeend',people4[0][3]);
+        }
+        return '../whiteday/Clear3.png';
+    }else{//それ以外の場合
+        let number = Math.round(Math.random()*10);
+        if(number<=4){
+            return '../whiteday/Clear1.png';
+        }else if (number<=7){
+            return '../whiteday/Clear5.jpg';
+        }else{
+            return '../whiteday/Clear2.png';
+        }
+    }
+}
+
 function gameMake(Ch) {//キャラ選択ボタンで発生するゲーム開始時の処理
     Chara = new CharaSet(Ch);
     inc=1;
@@ -216,13 +244,6 @@ function gameMake(Ch) {//キャラ選択ボタンで発生するゲーム開始�
     dispS1.addEventListener('click', selectAnswer);//selectAnswerのアクションを追加
     dispS2.addEventListener('click', selectAnswer);//同上
     return Chara;
-}
-
-function setQuest() {//質問の表示
-    displayImg.src = Chara.Imgcode;
-    dispQ.innerHTML = Chara.Ques;
-    dispS1.innerHTML = Chara.Sel1;
-    dispS2.innerHTML = Chara.Sel2;
 }
 
 function selectAnswer() {//回答選択時の実行
@@ -255,7 +276,7 @@ function nextStage() {//次へを押下した時実行
         let url=imgSelect();//画像の選択
         getId('ImgArea').style.backgroundImage = `url(${url})`;//画像URLの挿入
         getId('createPng').addEventListener('click',()=>{//画像ダウンロードボタンの生成
-            outputPng();
+            outputPng('ImgArea','MessageCard.png');
         });
         getId('submitBtn').addEventListener('click',()=>{//テキスト入力ボタンの設定
             let messages=getId('getText').value;//テキストの取得
@@ -288,7 +309,7 @@ function nextStage() {//次へを押下した時実行
                 dispS2.removeEventListener('click', selectAnswer);//同上
                 dispS1.addEventListener('click', //サイト頭へ飛ばす。
                     ()=>{
-                        window.location.href = '../index.html';
+                        window.location.href = '../uranai/KanzakiJingu.html';
                     }
                 );
             });           
@@ -302,39 +323,5 @@ function nextStage() {//次へを押下した時実行
     }
 }
 
-function imgSelect(){//メッセージカードの選択
-    if(Chara.name=='あるメイサー'){//ロムエッグさん選出キャラの場合
-        return '../img/Clear4.JPG';
-    }else if(Chara.name=='NightAgo'){//アゴり手さん選出キャラの場合
-        return '../img/Clear5.jpg';
-    }else if(Chara.name=='ちゅーとりある！'){//ちゅーとりあるの場合
-        {
-            getId('charaInsert').insertAdjacentHTML('beforeend',people2[0][3]);
-            getId('charaInsert').insertAdjacentHTML('beforeend',people3[0][3]);
-            getId('charaInsert').insertAdjacentHTML('beforeend',people4[0][3]);
-        }
-        return '../img/Clear3.png';
-    }else{//それ以外の場合
-        let number = Math.round(Math.random()*10);
-        if(number<=4){
-            return '../img/Clear1.png';
-        }else if (number<=7){
-            return '../img/Clear5.jpg';
-        }else{
-            return '../img/Clear2.png';
-        }
-    }
-}
 
-async function outputPng(){//pngとしてダウンロード
-    const msgCard=getId('ImgArea');//要素の取得
-    const canvas=await html2canvas(msgCard);//取得した要素の画像化
-    console.log(canvas);
-    const imgData=canvas.toDataURL("image/png");
-    const link=document.createElement("a");//a要素の付与
-    link.href=imgData;//画像をa要素にリンク
-    link.download="MessageCard.png";//ダウンロード時の名称の付与
-    document.body.appendChild(link);//ドキュメントにa要素の付与
-    link.click();//a要素のクリック（ダウンロード実行）
-    document.body.removeChild(link);//a要素の削除
-}
+

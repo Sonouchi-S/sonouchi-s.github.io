@@ -1,18 +1,29 @@
 /////////////////////////////
 //*ビンゴカードの作成・作成したカードでビンゴの実行・カードをpngで保存*
 //作成者:Shu,X:https://x.com/shu1483072
-//作成日:2025/03/22,更新日2025/03/23
+//作成日:2025/03/22,更新日2025/05/04
 //使用言語:JavaScript
-//依存関係:必要なライブラリ:html2canvas.min.js,ブラウザ:Chrome134.0.6998.118（Official Build）
+//依存関係:ブラウザ:Chrome134.0.6998.118（Official Build）
 //実行方法:DOCS/bingo/Bingo.html
 //ライセンス:
-// html2canvas v1.5.1
-// https://html2canvas.hertzen.com/
-// Copyright (c) 2023 Niklas von Hertzen
-// Released under the MIT License
-//注意事項:ライブラリのバージョン変更に伴い画像保存が機能しなくなる場合があるので、バージョン管理をしてください。
+//注意事項:
 //prefix:jshead
+//2025/05/04 画面にボタンと実行関数をセット、png出力処理の関数削除・script.jsに移動
 /////////////////////////////
+
+//画面にボタンと実行関数をセット
+getId('cleateBngDiv').addEventListener('click',()=>{//ビンゴカード作成画面表示
+    headerClick('cleateBng')
+});
+
+getId('outPutBngDiv').addEventListener('click',()=>{//ビンゴカード出力画面表示
+    headerClick('outPutBng')
+});
+
+getId('createPng').addEventListener('click',()=>{//画像ダウンロードボタンの生成
+    outputPng('oBng','BingoCard.png')
+});
+
 
 
 //ビンゴ面の作成
@@ -56,28 +67,28 @@ window.addEventListener('load', () => {//画面ロード時にarea配列の生�
 
 //ビンゴカードのマスを開閉する処理
 function cellOpnCls(id) {
-    getId(id).className = 
-    getId(id).className == 'cardsCell' ? 'clickedCell' : 'cardsCell';
+    getId(id).className = getId(id).className 
+    == 'cardsCell' ? 'clickedCell' : 'cardsCell';
 }
 
 //ビンゴカードをJsonファイルとして保存
 const json = new Object;//jsonObject
 let jsonData = getId('dataExport');//保存ボタンのid要素取得
 jsonData.addEventListener('click', () => {//保存ボタンクリック時の処理規定
-    dataMethod['createJson']();
-    let check = dataMethod['intCheck']();
+    dataMethod.createJson();
+    let check = dataMethod.intCheck();
     if (check.bl == false) {
         let msg = getId('resultMsg');
         msg.innerHTML = check.message;
     } else {
-        dataMethod['dataExport']();
+        dataMethod.dataExport();
     }
 });
 
 //カードのJsonファイル指定時にマスの数字を自動出力
 var formData = document.forms.myform;
 formData.myfile.addEventListener('change', (e) => {
-    dataMethod['dataImport'](e);
+    dataMethod.dataImport(e);
 });
 
 //dataMethodオブジェクト:ビンゴカードに関する各関数を格納・管理 
@@ -140,17 +151,4 @@ const dataMethod = {
             }
         }
     }
-}
-
-async function outputPng() {//pngとしてダウンロード
-    const msgCard = getId('oBng');//要素の取得
-    const canvas = await html2canvas(msgCard);//取得した要素の画像化
-    console.log(canvas);
-    const imgData = canvas.toDataURL("image/png");
-    const link = document.createElement("a");//a要素の付与
-    link.href = imgData;//画像をa要素にリンク
-    link.download = "BingoCard.png";//ダウンロード時の名称の付与
-    document.body.appendChild(link);//ドキュメントにa要素の付与
-    link.click();//a要素のクリック（ダウンロード実行）
-    document.body.removeChild(link);//a要素の削除
 }

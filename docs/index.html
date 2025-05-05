@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,6 @@
         href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Zen+Old+Mincho&display=swap"
         rel="stylesheet">
     <script src="js/script.js" defer></script>
-    <script src="js/uranai.js" defer></script>
     <title>Meisa Kanzaki Unofficial Fanclub</title>
 </head>
 
@@ -27,24 +26,17 @@
             <li onclick="headerClick('link');">
                 <p>Link</p>
             </li>
-            <li onclick="headerClick('uranai');">
-                <p>おみくじ</p>
+            <li onclick="headerClick('kobetsuKikaku');">
+                <p>ListenersEvents</p>
             </li>
         </ul>
     </header>
     <main>
 
-        <div class="onDisplay" id="topPage">
+        <div class="offDisplay" id="topPage">
             <h1 class="textCenter">変身願望を叶える</h1>
-            <p>
-                このサイトはVtuber 神崎メイサのリスナーにより作成されたファンクラブサイトです。<br>
-                現在内容を作成中ですので何かありましたら<a href="https://x.com/shu1483072">こちら</a>までDMください。
-            </p>
-            <div id="beforeTwitter"></div>
-            <h2 class="textCenter">情報</h2>
-            <div id="twitter">
-                <a class="twitter-timeline" data-height="600" href="https://twitter.com/Kanzaki_Meisa?ref_src=twsrc%5Etfw">Tweets by Kanzaki_Meisa</a> 
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" defer></script>
+            <div id="">
+                <div id="fadeArea" class="imgFade0"></div>
             </div>
         </div>
 
@@ -87,22 +79,18 @@
             </div>
         </div>
 
-        <div class="offDisplay" id="uranai">
-            <h1 class="textCenter">神崎神宮</h1>
-            <div id="keidai">
-                <div class="flexbox">
-                    <p id="setName">あなた</p><p>の運勢</p>
-                </div>
-                <p class="" id="about"></p>
-                <h2 class="" id="result"></h2>
-            </div>
-            <div class="flexbox">
-                <input type="text" id="getName" value="">
-                <button onclick="startUranai();">占う</button>
+        <div class="offDisplay" id="kobetsuKikaku">
+            <h1 class="textCenter">個別企画</h1>
+            <p>
+                リスナーによって実施された企画。<br>
+            </p>
+            <div >
+                <a href="uranai/KanzakiJingu.html">神崎神宮<br><img src="uranai/miya.png"></a>
+                <a href="whiteday/whiteday.html">ホワイトデー企画<img src="whiteday/Clear1.png"></a>
+                <!-- <a href="bingo/Bingo.html">ビンゴ企画<img src="bingo/stamp.png"></a> -->
             </div>
         </div>
-
     </main>
+    <div id="loadAnmArea"></div>
 </body>
-
 </html>
