@@ -53,3 +53,4 @@ Add Infomation.
    js/script.js,uranai.js,whiteday.js,bingo.js
 
 2025/05/05 ver.2.1.1 release.
+2025/05/05 ver.2.1.2 release.

@@ -105,15 +105,12 @@ function loadAction(){
     const img = document.createElement('img');
     img.id='Anm';
     img.style.position = 'absolute';
-    img.style.left = '-150px'; 
     img.src = '../img/topPre1.png'; 
     getId('loadAnmArea').insertAdjacentElement("afterbegin",img);
     getId('Anm').animate(kf1,opt);
     
     setTimeout(()=>{
     img.src='../img/topPre2.png';
-    img.style.left = '0px'; //右へ移動
-
     getId('Anm').remove();
     getId('loadAnmArea').insertAdjacentElement("afterbegin",img);
     getId('Anm').animate(kf2,opt);

@@ -172,7 +172,7 @@ div.linkIcons{
     background-color: #000000;
 }
 #Anm{
-    width: 150%;
+    width: 100%;
 }
 
 .imgFade0{
@@ -447,10 +447,15 @@ font-size: 12px;
         padding: 10px;
         font-size: 16px;
     }
+    #loadAnmArea{
+        left: 0;
+        width: 100%;
+    }
     .imgFade0, .imgFade1, .imgFade2, .imgFade3{
         width: auto;
     }
     #Anm{
-        height:max-content;
+        width: 200%;
+        left:-50%;
     }
 }
