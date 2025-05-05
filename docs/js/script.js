@@ -114,7 +114,7 @@ function loadAction(){
     img.src='../img/topPre2.png';
     img.style.left = '0px'; //右へ移動
 
-    getId('loadAnmArea').nextElementSibling.remove();
+    getId('Anm').remove();
     getId('loadAnmArea').insertAdjacentElement("afterbegin",img);
     getId('Anm').animate(kf2,opt);
     },2000);
