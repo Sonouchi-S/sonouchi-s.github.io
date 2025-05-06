@@ -185,43 +185,18 @@ div.linkIcons{
     width: 500px;
     height: 282px;
     background: url(../img/top1.png) no-repeat center / contain;
-    animation-name: imgFade;
-    animation-duration: 4s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
 }
 .imgFade2{
     margin: auto;
     width: 500px;
     height: 282px;
     background: url(../img/top2.png) no-repeat center / contain;
-    animation-name: imgFade;
-    animation-duration: 4s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
 }
 .imgFade3{
     margin: auto;
     width: 500px;
     height: 282px;
     background: url(../img/top3.png) no-repeat center / contain;
-    animation-name: imgFade;
-    animation-duration: 4s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes imgFade{
-    0%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-
 }
 /* トップページアニメーションここまで */
 

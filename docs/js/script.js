@@ -68,8 +68,8 @@ async function outputPng(id,name) {//pngとしてダウンロード
 
 //トップページアニメーション
 class fadeCntl{
-     countInt=1;
-     setInt(){
+    countInt=1;
+    setInt(){
         this.countInt++;
         if(this.countInt==1){return 1;}
         else if(this.countInt==2){return 2;}
@@ -78,11 +78,26 @@ class fadeCntl{
             this.countInt=1;
             return 1;
         }
-     }
+    }
+    kf=[
+        { opacity:0},
+        { opacity:1},
+        { opacity:0},
+    ];
+    opt={
+        duration: 4000
+    };
+
+    anmSet(id){
+        getId(id).animate(this.kf,this.opt);
+    }
+
 }
+
 const fc=new fadeCntl();
 window.setInterval(()=>{
         getId('fadeArea').className='imgFade'+fc.setInt();
+        fc.anmSet('fadeArea');
 },4000);
 
 getId('loadAnmArea').addEventListener('load',loadAction());
