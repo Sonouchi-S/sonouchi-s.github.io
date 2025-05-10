@@ -162,6 +162,12 @@ div.linkIcons{
 #kobetsuKikaku img{
     width: 100%;
 }
+/* Twitter貼り付用 */
+.twitter-tweet-rendered{
+    margin-left:auto;
+    margin-right:auto;
+}
+/* Twitter貼り付用ここまで */
 
 /* トップページアニメーション */
 #loadAnmArea{
