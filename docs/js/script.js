@@ -18,7 +18,8 @@
 //・ヘッダーのリスト押下時の表示処理
 //・特別サイト移動処理     
 //2025/05/04　ハウルギミック・cookieの削除、png出力処理追加
-//2025/05/05　トップページロード時のアニメーション追加             
+//2025/05/05　トップページロード時のアニメーション追加
+//2025/08/16  画像プリロード追加             
 /////////////////////////////
 
 //id要素の取得
@@ -87,12 +88,19 @@ class fadeCntl{
     opt={
         duration: 4000
     };
-
     anmSet(id){
         getId(id).animate(this.kf,this.opt);
     }
-
 }
+// 画像プリロード
+const preloadImages = () => {
+    const images = ['../img/topPre1.png', '../img/topPre2.png'];
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+};
+preloadImages(); 
 
 const fc=new fadeCntl();
 window.setInterval(()=>{
