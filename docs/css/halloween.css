@@ -1,0 +1,91 @@
+/*
+カラー
+グリーン　#5BBB96　アクセント
+ライトブルー　#498BC1　header , main
+ブルー　#47458B　ベースカラー
+
+ライトグリーン　#EEF6E1　ヘッダー用
+ライトレッド　#F9DFDA　ホバー用
+ブラック　#484A42　フォント用
+シャドウ　#DCDFD8　影用
+
+背景色(薄) #FFC000
+背景色(濃) #EA8B00
+
+*/
+
+body{
+    font-family:'HGS創英角ﾎﾟｯﾌﾟ体';
+    background-color: #EA8B00;
+    font-size: 20px;
+}
+
+header{
+    font-family:'HGS創英角ﾎﾟｯﾌﾟ体';
+    background-color: #FFC000;
+}
+
+main{
+    position:relative;
+    width: 90%;
+    background-color: #EA8B00;
+}
+
+.hallTitle{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+.hallTitle img{
+    width: 90%;
+}
+h2{
+    color: #ffffff;
+}
+.hallBox{
+    position:relative;
+    border: 4px,solid,#ffffff;
+    border-radius: 2rem;
+    text-align: center;
+    color: #444444;
+    min-height: 400px;
+    background-color: rgba(255,192,0,0.40);
+}
+
+.hallImg{
+    position: relative;
+    padding-right: 0%;
+    width: 100%;
+}
+
+.Img1{
+    position: absolute;
+    width: 20%;
+    right: 0%;
+    top: 20px;
+}
+
+.Img2{
+    position: absolute;
+    width: 50%;
+    text-align: right;
+    top: 20px;
+}
+
+.hallText{
+    color: #ffffff;
+}
+ul{
+    padding-left: 10%;
+    text-align: left;
+}
+
+.hallLink a{
+    color: #ffffff;
+    background-color:deepskyblue;
+    border-radius: 10px;
+    margin: 8px;
+    padding: 4px;
+
+}
+
