@@ -29,6 +29,10 @@ main{
     position:relative;
     width: 90%;
     background-color: #EA8B00;
+    background-image: url(../halloween/haikei1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
 }
 
 .hallTitle{
@@ -49,7 +53,7 @@ h2{
     text-align: center;
     color: #444444;
     min-height: 400px;
-    background-color: rgba(255,192,0,0.40);
+    background-color: rgba(255,192,0,0.60);
 }
 
 .hallImg{
@@ -67,7 +71,7 @@ h2{
 
 .Img2{
     position: absolute;
-    width: 50%;
+    width: 40%;
     text-align: right;
     top: 20px;
 }
