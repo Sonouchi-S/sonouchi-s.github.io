@@ -5,6 +5,9 @@
 /-/| |-/| | | |----,_, ' ' ,__*-- | / /---| | | |--|_|
 -- *--  --- *------' '-----' \---* *-'    *-  ---   --' 
 =======================================================
+2025/09014 ver.2.2.3 release.
+   Update Text.
+   halloween/halloween.html
 2025/09/13 ver.2.2.2 release.
    Update Design.
       halloween/halloween.html
