@@ -55,6 +55,9 @@ h2{
     min-height: 400px;
     background-color: rgba(255,192,0,0.60);
 }
+Img {
+    width: 100%;
+}
 
 .hallImg{
     position: relative;
