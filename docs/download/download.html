@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Zen+Old+Mincho&display=swap"
+        rel="stylesheet">
+    <script src="../js/script.js" defer></script>
+    <title>リスナー支援ツール</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li> <a href="../index.html"><p>戻る</p></a> </li>
+        </ul>
+    </header>
+    <main>
+        <div class="" id="download">
+            <h1 class="textCenter">
+                リスナー支援ツール
+            </h1>
+            <h2>
+                GoogleChrome拡張機能 弾幕/拍手入力
+            </h2>
+            <p>
+                GoogleChrome拡張機能を使って、YouTube配信で手軽に弾幕を入力できるツールを開発しました。
+                <br>一度弾幕を登録するだけで弾幕を連続して入力できますので、何度も入力する手間が省けます。
+            </p>
+             <div class="textCenter"><img src="comments.png" class="downloadImg" alt="拡張機能_弾幕/拍手入力"> 
+            </div>
+            <br>
+            <h2>
+                機能紹介
+            </h2>
+            <dl>
+                <dt>弾幕</dt><dd>任意の絵文字/テキストを入力できます。入力内容は都度変更可能です。デフォルトでは空欄になっています。</dd>
+                <dt>拍手</dt><dd>デフォルトで拍手の絵文字が入力されています。入力内容は変更可能です。</dd>
+                <dt>弾幕入力/拍手入力</dt><dd>登録されたテキストをチャット欄へ自動入力します。送信ボタンを押すか、Enterを押すことで、入力内容を送信できます。</dd>
+                <dt>その他</dt><dd>メンバーシップスタンプでなければ、様々な弾幕を入力できます。歌枠リレーで配信ごとに弾幕を変えて利用できます。</dd>
+            </dl>
+            <br>
+            <h2>
+                利用上の注意点
+            </h2>
+            <dl>
+                <dt>利用責任</dt><dd>当拡張機能は配信者の求める弾幕/拍手などに応えるために作成されたツールです。
+                                        <br>トラブルを生じた場合、一切責任を負いかねますので、当該目的以外での利用はしないでください。
+                                    </dd>
+                <dt>入力内容の制限</dt><dd>メンバーシップのスタンプは入力できません。</dd>
+                <dt>サポート</dt><dd>拡張機能はバージョン情報を自動サポートされていません。YouTubeやChromeの仕様変更により動作しなくなる場合があります。
+                                    <br>バージョン変更があった場合は、当ページにて都度お知らせします。
+                                </dd>
+                <dt>動作環境</dt><dd>Chromeの拡張機能はPCのみ利用可能です。Android並びにiOSではサポートされていません。</dd>
+                <dt>確認済み実行環境</dt><dd>GoogleChrome バージョン 142.0.7444.60（Official Build）（64 ビット）</dd>
+            </dl>
+            <br>
+            <h2>
+                利用方法
+            </h2>
+            <dl>
+            <dt>ダウンロード</dt><dd>下の「拡張機能.zip」をクリックし、zipファイルをダウンロード。
+                                    <br><div><a href="拡張機能.zip" download>拡張機能.zip</a></div>
+                                </dd>
+            <dt>zipファイルの解凍</dt><dd>ファイルを解凍（解凍先はCドライブ、DドライブどちらでもOK）。</dd>
+            <dt>Chrome起動</dt><dd>GoogleChromeを起動し、右上の「設定（三点ボタン）」→「拡張機能」→「拡張機能を管理」をクリック。
+                                    <br><img src="kakuchou.png" class="downloadImg" alt="Chrome拡張機能">
+                                </dd>
+            <dt>拡張機能登録</dt><dd>左上にある「パッケージ化されていない拡張機能を読み込む」をクリック後、
+                                    <br>解凍したフォルダを選択し、「フォルダーの選択」をクリックで登録完了。
+                                    <br><img src="yoikomi.png" class="downloadImg" alt="読み込みボタン">
+                                    <br><img src="sentaku.png" class="downloadImg" alt="拡張機能選択">
+                                    <br>登録が成功すると、拡張機能の一覧に今回作成した「Comments_Supports」という拡張機能が追加されます。
+                                    <br><img src="touroku.png" class="downloadImg" alt="登録結果">
+                                    
+                                </dd>
+            <dt>表示/利用</dt><dd>YouTubeの配信ページに移動で自動表示される。
+                            <br>自動表示されない場合は、右上の拡張機能アイコンをクリックすることで表示される。
+                            <br><img src="tekiou.png" class="downloadImg" alt="実装イメージ">
+                        </dd>
+            <dt>その他</dt><dd>拡張機能のアイコンを右クリック→「サイトデータの読み取りと変更」をクリックすると、拡張機能の表示条件を選択できます。
+                                <br>配信画面で常に表示させたい場合はYouTube.comを選択することで、アイコンをクリックしなくても表示できるようになります。
+                                <br><img src="settei.png" class="downloadImg" alt="表示設定">
+                        </dd>
+            </dl>
+            <br>
+            <h2>バージョン情報</h2>
+            <ul>
+                <li>2025/11/10 バージョン1.0.0</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

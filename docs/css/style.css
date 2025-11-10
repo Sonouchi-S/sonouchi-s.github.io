@@ -376,7 +376,17 @@ font-size: 12px;
         text-align: left;
     }
 /* Bingoここまで */
-
+/* ダウンロードサイト用画像 */
+#download{
+    padding-left: 10px;
+}
+img.downloadImg{
+    max-width: 300px;
+}
+dt{
+    font-weight: bold;
+}
+/* ダウンロードサイト用画像ここまで */
 
 
 
