@@ -17,10 +17,12 @@ frameImg.src = "../img/photo0.png"; // フレーム用の画像パス
 let selectedEffect = "none"; // 初期エフェクトなし
 let photoImg = 0; // 撮影した写真のImageオブジェクト
 let textInput = getId("textInput"); // テキスト入力要素
-const txtArea= new Image();
-txtArea.src="../img/fukidashi.png";
+// const txtArea= new Image();
+// txtArea.src="../img/fukidashi.png";
 const txtArea1= new Image();
 txtArea1.src="../img/fukidashi1.png";
+const cntImg= new Image();
+cntImg.src="../img/cnt.png";
 
 
 // シャッターボタンの動作
@@ -81,6 +83,8 @@ if (textInput.value.trim() !== "") {
             ctx.fillText(line, 5, (canvas.height-90)+(25 * i));
         }
     }
+}else if(getId("cnt").checked){
+    ctx.drawImage(cntImg, 10, canvas.height - 80, canvas.width*0.4, cntImg.height/cntImg.width * (canvas.width*0.4));
 }
 
 // エフェクトを適用する
