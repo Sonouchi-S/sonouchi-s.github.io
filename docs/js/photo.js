@@ -16,6 +16,11 @@ const frameImg = new Image();
 frameImg.src = "../img/photo0.png"; // フレーム用の画像パス
 let selectedEffect = "none"; // 初期エフェクトなし
 let photoImg = 0; // 撮影した写真のImageオブジェクト
+let textInput = getId("textInput"); // テキスト入力要素
+const txtArea= new Image();
+txtArea.src="../img/fukidashi.png";
+const txtArea1= new Image();
+txtArea1.src="../img/fukidashi1.png";
 
 
 // シャッターボタンの動作
@@ -51,6 +56,32 @@ if(photoImg <= 1 ){
     positionY = canvas.height - newHeight;
 }
 ctx.drawImage(frameImg, positionX, positionY, newWidth, newHeight);
+// テキストを描画
+// if (textInput.value.trim() !== "") {
+//     ctx.font = "bold 25px Arial";
+//     ctx.fillStyle = "black";
+//     ctx.drawImage(txtArea, 0, 0, 310, 130);
+//     let txt = escapeHTML(textInput.value.replace(/\n/g, '')); // 改行を削除
+//     for (let i = 1; i <= 3; i++){
+//         let line = txt.substring((i-1)*12, i*12);
+//         if(line.length > 0){
+//             ctx.fillText(line, 5, 25 * i);
+//         }
+//     }
+// }
+
+if (textInput.value.trim() !== "") {
+    ctx.font = "bold 25px Arial";
+    ctx.fillStyle = "black";
+    ctx.drawImage(txtArea1, 0, canvas.height - 130, 310, 130);
+    let txt = escapeHTML(textInput.value.replace(/\n/g, '')); // 改行を削除
+    for (let i = 1; i <= 3; i++){
+        let line = txt.substring((i-1)*12, i*12);
+        if(line.length > 0){
+            ctx.fillText(line, 5, (canvas.height-90)+(25 * i));
+        }
+    }
+}
 
 // エフェクトを適用する
 canvas.style.filter = selectedEffect;

@@ -25,6 +25,13 @@
 
 //id要素の取得
 function getId(Id) { return document.getElementById(Id);}
+function escapeHTML(str) {//エスケープ処理
+    return str.replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#039;');
+}
 
 //ヘッダーのリスト押下時にメインタグへ表示する。
 function headerClick(area){
