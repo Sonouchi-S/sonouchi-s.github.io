@@ -31,10 +31,12 @@ getId("shutter").addEventListener("click", () => {
   canvas.width = video.videoWidth??640;
   canvas.height = video.videoHeight??480;
 
-  // 写真を撮る（Videoの現在のフレームを描画）
+// エフェクトを適用
+  ctx.filter = selectedEffect;
+// 写真を撮る（Videoの現在のフレームを描画）
 ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  // 3. 合成する（例：右下に文字を入れる）
+// 合成する（例：右下に文字を入れる）
 //   ctx.font = "bold 40px Arial";
 //   ctx.fillStyle = "red";
 //   ctx.fillText("SHOT ON MY TOOL", 20, canvas.height - 40);
@@ -88,8 +90,8 @@ if (textInput.value.trim() !== "") {
 }
 
 // エフェクトを適用する
-canvas.style.filter = selectedEffect;
-canvas.style.display = "block";
+// canvas.style.filter = selectedEffect;
+ canvas.style.display = "block";
 });
 /////////////////////////////////////////////////////////////////// 
 
