@@ -19,7 +19,8 @@
 //・特別サイト移動処理     
 //2025/05/04　ハウルギミック・cookieの削除、png出力処理追加
 //2025/05/05　トップページロード時のアニメーション追加
-//2025/08/16  画像プリロード追加             
+//2025/08/16  画像プリロード追加
+//2026/01/02 トップページアニメーションの実行方法変更             
 /////////////////////////////
 
 //id要素の取得
@@ -100,7 +101,15 @@ const preloadImages = () => {
         img.src = src;
     });
 };
-preloadImages(); 
+
+
+/*トップページのみの処理*/
+const path = window.location.pathname;
+const fileName = path.substring(path.lastIndexOf('/') + 1);// 最後のスラッシュ以降を取り出す
+if (fileName === 'index.html' || fileName === '') {
+    console.log('トップページです');
+
+    preloadImages(); 
 
 const fc=new fadeCntl();
 window.setInterval(()=>{
@@ -143,4 +152,5 @@ function loadAction(){
         getId('loadAnmArea').remove();
         headerClick('topPage');
     },4000);
+}
 }

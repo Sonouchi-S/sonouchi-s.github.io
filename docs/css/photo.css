@@ -1,0 +1,37 @@
+div.flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myVideo{
+    width: 100%;
+    max-width: 400px;
+}
+#picture{
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    border: 2px solid #333;
+}
+button.btn{
+    display: block;
+    margin-top: 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #498BC1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.photoImg{
+
+    max-height: 100px;
+    border: solid 2px #ffffff;
+}
+
+#picture{
+    margin: auto;
+}

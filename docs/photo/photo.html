@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/photo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Zen+Old+Mincho&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/photo.js" defer></script>
+    <title>Photo</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li> <a href="../index.html"><p>戻る</p></a> </li>
+        </ul>
+    </header>
+    <main>
+        <div class="onDisplay">
+            <h1 class="textCenter">
+                Photo
+            </h1>
+            <p class="textCenter">
+            </p>
+            <div>
+                <h3>画像選択</h3>
+                <div class="flexbox">
+                    <img src="../img/photo0.png" alt="画像0" class="photoImg" id="photo0">
+                    <img src="../img/photo1.png" alt="画像1" class="photoImg" id="photo1">
+                    <img src="../img/photo2.png" alt="画像2" class="photoImg" id="photo2">
+                    <img src="../img/photo3.png" alt="画像3" class="photoImg" id="photo3">
+                    <img src="../img/photo4.png" alt="画像4" class="photoImg" id="photo4">
+                </div>
+                <br>
+                <h3>
+                    エフェクト
+                </h3>
+                <form action="">
+                <div class="flexbox">
+                    <div><input type="radio" name="efc" id="effect1" value="none" checked><label for="effect1">なし</label></div>
+                    <div><input type="radio" name="efc" id="effect2" value="grayscale(100%)"><label for="effect2">モノクロ</label></div>
+                    <div><input type="radio" name="efc" id="effect3" value="sepia(60%)"><label for="effect3">セピア</label></div>
+                    <div><input type="radio" name="efc" id="effect4" value="brightness(1.2)"><label for="effect4">明るめ</label></div>
+                </div>
+                </form>
+                <br>
+
+
+                <div class="textCenter">
+                <video id="myVideo" autoplay playsinline></video>
+                <canvas id="picture"></canvas>
+                </div>
+                <br>
+                <div class="flexbox">
+                    <button class="btn" id="shutter">写真を撮る</button>
+                    <button class="btn" id="save">写真を保存</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
